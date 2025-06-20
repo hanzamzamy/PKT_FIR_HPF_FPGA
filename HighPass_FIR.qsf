@@ -5,7 +5,7 @@
 set_global_assignment -name FAMILY "MAX 10 FPGA"
 set_global_assignment -name DEVICE 10M50DAF484C7G
 set_global_assignment -name TOP_LEVEL_ENTITY "HighPass_FIR"
-set_global_assignment -name ORIGINAL_QUARTUS_VERSION "16.0.0"
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 16.0.0
 set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:07:41 JUNE 18,2025"
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
@@ -29,8 +29,8 @@ set_location_assignment PIN_N14 -to MAX10_CLK2_50
 #============================================================
 # KEY
 #============================================================
-set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to KEY[0]
-set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to KEY[1]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to KEY[0]
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to KEY[1]
 set_location_assignment PIN_B8 -to KEY[0]
 set_location_assignment PIN_A7 -to KEY[1]
 
@@ -53,7 +53,7 @@ set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[12]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[13]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[14]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[15]
-set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to ARDUINO_RESET_N
+set_instance_assignment -name IO_STANDARD "3.3 V SCHMITT TRIGGER" -to ARDUINO_RESET_N
 set_location_assignment PIN_AB5 -to ARDUINO_IO[0]
 set_location_assignment PIN_AB6 -to ARDUINO_IO[1]
 set_location_assignment PIN_AB7 -to ARDUINO_IO[2]
@@ -106,4 +106,5 @@ set_global_assignment -name SDC_FILE HighPass_FIR.SDC
 set_global_assignment -name VHDL_FILE HighPass_FIR_tb.vhd
 set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR simulation/ -section_id eda_simulation
 set_global_assignment -name EDA_TEST_BENCH_FILE HighPass_FIR_tb.vhd -section_id tb_top
+set_global_assignment -name OPTIMIZATION_MODE BALANCED
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

@@ -18,6 +18,5 @@ Sim dir               :  simulation/modelsim
 
 Info: Starting NativeLink simulation with Questa Intel FPGA software
 Sourced NativeLink script /mount/hanz/Data/PKT/quartus/quartus/common/tcl/internal/nativelink/modelsim.tcl
-Warning: File HighPass_FIR_run_msim_rtl_vhdl.do already exists - backing up current file as HighPass_FIR_run_msim_rtl_vhdl.do.bak
 Info: Spawning Questa Intel FPGA Simulation software 
 Info: NativeLink simulation flow was successful
