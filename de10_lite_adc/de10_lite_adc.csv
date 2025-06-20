@@ -1,0 +1,31 @@
+# system info de10_lite_adc on 2025.06.19.12:58:43
+system_info:
+name,value
+DEVICE,10M50DAF484C7G
+DEVICE_FAMILY,MAX 10
+GENERATION_ID,1750312719
+#
+#
+# Files generated for de10_lite_adc on 2025.06.19.12:58:43
+files:
+filepath,kind,attributes,module,is_top
+simulation/de10_lite_adc.v,VERILOG,,de10_lite_adc,true
+simulation/submodules/altera_up_avalon_adv_adc.v,VERILOG,,de10_lite_adc_adc_mega_0,false
+simulation/submodules/altera_modular_adc_control.v,VERILOG,,de10_lite_adc_adc_mega_0,false
+simulation/submodules/altera_modular_adc_control_avrg_fifo.v,VERILOG,,de10_lite_adc_adc_mega_0,false
+simulation/submodules/altera_modular_adc_control_fsm.v,VERILOG,,de10_lite_adc_adc_mega_0,false
+simulation/submodules/altera_modular_adc_sample_store.v,VERILOG,,de10_lite_adc_adc_mega_0,false
+simulation/submodules/altera_modular_adc_sample_store_ram.v,VERILOG,,de10_lite_adc_adc_mega_0,false
+simulation/submodules/altera_modular_adc_sequencer.v,VERILOG,,de10_lite_adc_adc_mega_0,false
+simulation/submodules/altera_modular_adc_sequencer_csr.v,VERILOG,,de10_lite_adc_adc_mega_0,false
+simulation/submodules/altera_modular_adc_sequencer_ctrl.v,VERILOG,,de10_lite_adc_adc_mega_0,false
+simulation/submodules/chsel_code_converter_sw_to_hw.v,VERILOG,,de10_lite_adc_adc_mega_0,false
+simulation/submodules/DE10_Lite_ADC_Core_modular_adc_0.v,VERILOG,,de10_lite_adc_adc_mega_0,false
+simulation/submodules/fiftyfivenm_adcblock_primitive_wrapper.v,VERILOG,,de10_lite_adc_adc_mega_0,false
+simulation/submodules/fiftyfivenm_adcblock_top_wrapper.v,VERILOG,,de10_lite_adc_adc_mega_0,false
+simulation/submodules/de10_lite_adc_adc_mega_0.v,VERILOG,,de10_lite_adc_adc_mega_0,false
+#
+# Map from instance-path to kind of module
+instances:
+instancePath,module
+de10_lite_adc.adc_mega_0,de10_lite_adc_adc_mega_0

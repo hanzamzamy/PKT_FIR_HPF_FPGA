@@ -1,0 +1,109 @@
+#============================================================
+# Build by Terasic System Builder
+#============================================================
+
+set_global_assignment -name FAMILY "MAX 10 FPGA"
+set_global_assignment -name DEVICE 10M50DAF484C7G
+set_global_assignment -name TOP_LEVEL_ENTITY "HighPass_FIR"
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "16.0.0"
+set_global_assignment -name LAST_QUARTUS_VERSION "21.1.0 Lite Edition"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:07:41 JUNE 18,2025"
+set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
+set_global_assignment -name DEVICE_FILTER_PIN_COUNT 484
+set_global_assignment -name DEVICE_FILTER_SPEED_GRADE 7
+
+#============================================================
+# CLOCK
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ADC_CLK_10
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MAX10_CLK1_50
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to MAX10_CLK2_50
+set_location_assignment PIN_N5 -to ADC_CLK_10
+set_location_assignment PIN_P11 -to MAX10_CLK1_50
+set_location_assignment PIN_N14 -to MAX10_CLK2_50
+
+#============================================================
+# SEG7
+#============================================================
+
+#============================================================
+# KEY
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to KEY[0]
+set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to KEY[1]
+set_location_assignment PIN_B8 -to KEY[0]
+set_location_assignment PIN_A7 -to KEY[1]
+
+#============================================================
+# Arduino
+#============================================================
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[8]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[9]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[10]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[11]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[12]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[13]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[14]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to ARDUINO_IO[15]
+set_instance_assignment -name IO_STANDARD "3.3 V Schmitt Trigger" -to ARDUINO_RESET_N
+set_location_assignment PIN_AB5 -to ARDUINO_IO[0]
+set_location_assignment PIN_AB6 -to ARDUINO_IO[1]
+set_location_assignment PIN_AB7 -to ARDUINO_IO[2]
+set_location_assignment PIN_AB8 -to ARDUINO_IO[3]
+set_location_assignment PIN_AB9 -to ARDUINO_IO[4]
+set_location_assignment PIN_Y10 -to ARDUINO_IO[5]
+set_location_assignment PIN_AA11 -to ARDUINO_IO[6]
+set_location_assignment PIN_AA12 -to ARDUINO_IO[7]
+set_location_assignment PIN_AB17 -to ARDUINO_IO[8]
+set_location_assignment PIN_AA17 -to ARDUINO_IO[9]
+set_location_assignment PIN_AB19 -to ARDUINO_IO[10]
+set_location_assignment PIN_AA19 -to ARDUINO_IO[11]
+set_location_assignment PIN_Y19 -to ARDUINO_IO[12]
+set_location_assignment PIN_AB20 -to ARDUINO_IO[13]
+set_location_assignment PIN_AB21 -to ARDUINO_IO[14]
+set_location_assignment PIN_AA20 -to ARDUINO_IO[15]
+set_location_assignment PIN_F16 -to ARDUINO_RESET_N
+
+#============================================================
+# GPIO, GPIO connect to GPIO Default
+#============================================================
+
+#============================================================
+# End of pin assignments by Terasic System Builder
+#============================================================
+
+
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name VERILOG_INPUT_VERSION SYSTEMVERILOG_2005
+set_global_assignment -name VERILOG_SHOW_LMF_MAPPING_MESSAGES OFF
+set_global_assignment -name EDA_SIMULATION_TOOL "Questa Intel FPGA (VHDL)"
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT VHDL -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
+set_global_assignment -name EDA_NATIVELINK_SIMULATION_TEST_BENCH tb_top -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_NAME tb_top -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id tb_top
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME HighPass_FIR_tb -section_id tb_top
+set_global_assignment -name QIP_FILE de10_lite_adc/synthesis/de10_lite_adc.qip
+set_global_assignment -name VHDL_FILE HighPass_FIR.vhd
+set_global_assignment -name VHDL_FILE tx_packet_gen.vhd
+set_global_assignment -name VHDL_FILE fir_filter.vhd
+set_global_assignment -name VHDL_FILE uart_tx.vhd
+set_global_assignment -name SDC_FILE HighPass_FIR.SDC
+set_global_assignment -name VHDL_FILE HighPass_FIR_tb.vhd
+set_global_assignment -name EDA_NETLIST_WRITER_OUTPUT_DIR simulation/ -section_id eda_simulation
+set_global_assignment -name EDA_TEST_BENCH_FILE HighPass_FIR_tb.vhd -section_id tb_top
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

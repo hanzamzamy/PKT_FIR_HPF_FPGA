@@ -1,0 +1,100 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity fir_filter is
+    generic (
+        NUM_TAPS              : integer := 101;
+        COEFFICIENT_WIDTH     : integer := 16;
+        INPUT_WIDTH           : integer := 12;
+        OUTPUT_WIDTH          : integer := 12;
+        -- The accumulator must be wide enough to prevent overflow.
+        -- Width = INPUT_WIDTH + COEFFICIENT_WIDTH + log2(NUM_TAPS)
+        -- Width = 12 + 16 + log2(101) = 28 + 6.65 => 35 bits.
+        ACCUMULATOR_WIDTH     : integer := 35
+    );
+    port (
+        -- System signals
+        clk_i           : in  std_logic;
+        rst_i           : in  std_logic;
+
+        -- Input data from ADC
+        sample_i        : in  std_logic_vector(INPUT_WIDTH-1 downto 0);
+        sample_valid_i  : in  std_logic; -- A pulse indicating a new sample is ready
+
+        -- Output data to UART
+        filtered_o      : out std_logic_vector(OUTPUT_WIDTH-1 downto 0);
+        filtered_valid_o: out std_logic  -- A pulse indicating a filtered sample is ready
+    );
+end entity fir_filter;
+
+
+architecture rtl of fir_filter is
+
+    -- VHDL Coefficient Array
+    -- Filter: High-Pass, Fs=40000Hz, Fcut=1800Hz, Taps=101
+    type T_COEFF_ARRAY is array (0 to NUM_TAPS-1) of signed(COEFFICIENT_WIDTH-1 downto 0);
+    constant C_FIR_COEFFS : T_COEFF_ARRAY := (
+        to_signed(     0, 16), to_signed(    -9, 16), to_signed(   -16, 16), to_signed(   -19, 16), to_signed(   -16, 16), to_signed(    -7, 16), to_signed(     7, 16), to_signed(    22, 16),
+        to_signed(    33, 16), to_signed(    36, 16), to_signed(    26, 16), to_signed(     3, 16), to_signed(   -27, 16), to_signed(   -56, 16), to_signed(   -71, 16), to_signed(   -65, 16),
+        to_signed(   -33, 16), to_signed(    19, 16), to_signed(    77, 16), to_signed(   121, 16), to_signed(   132, 16), to_signed(    98, 16), to_signed(    21, 16), to_signed(   -79, 16),
+        to_signed(  -173, 16), to_signed(  -225, 16), to_signed(  -209, 16), to_signed(  -115, 16), to_signed(    37, 16), to_signed(   207, 16), to_signed(   338, 16), to_signed(   377, 16),
+        to_signed(   292, 16), to_signed(    88, 16), to_signed(  -189, 16), to_signed(  -456, 16), to_signed(  -619, 16), to_signed(  -601, 16), to_signed(  -366, 16), to_signed(    53, 16),
+        to_signed(   559, 16), to_signed(  1000, 16), to_signed(  1208, 16), to_signed(  1038, 16), to_signed(   418, 16), to_signed(  -630, 16), to_signed( -1980, 16), to_signed( -3421, 16),
+        to_signed( -4701, 16), to_signed( -5583, 16), to_signed( 26865, 16), to_signed( -5583, 16), to_signed( -4701, 16), to_signed( -3421, 16), to_signed( -1980, 16), to_signed(  -630, 16),
+        to_signed(   418, 16), to_signed(  1038, 16), to_signed(  1208, 16), to_signed(  1000, 16), to_signed(   559, 16), to_signed(    53, 16), to_signed(  -366, 16), to_signed(  -601, 16),
+        to_signed(  -619, 16), to_signed(  -456, 16), to_signed(  -189, 16), to_signed(    88, 16), to_signed(   292, 16), to_signed(   377, 16), to_signed(   338, 16), to_signed(   207, 16),
+        to_signed(    37, 16), to_signed(  -115, 16), to_signed(  -209, 16), to_signed(  -225, 16), to_signed(  -173, 16), to_signed(   -79, 16), to_signed(    21, 16), to_signed(    98, 16),
+        to_signed(   132, 16), to_signed(   121, 16), to_signed(    77, 16), to_signed(    19, 16), to_signed(   -33, 16), to_signed(   -65, 16), to_signed(   -71, 16), to_signed(   -56, 16),
+        to_signed(   -27, 16), to_signed(     3, 16), to_signed(    26, 16), to_signed(    36, 16), to_signed(    33, 16), to_signed(    22, 16), to_signed(     7, 16), to_signed(    -7, 16),
+        to_signed(   -16, 16), to_signed(   -19, 16), to_signed(   -16, 16), to_signed(    -9, 16), to_signed(     0, 16)
+    );
+
+    -- Internal signals for the filter operation
+    -- Tapped delay line (shift register for input samples)
+    type T_DELAY_LINE is array (0 to NUM_TAPS-1) of signed(INPUT_WIDTH-1 downto 0);
+    signal s_delay_line : T_DELAY_LINE;
+
+begin
+    -- This is the main clocked process that implements the filter.
+    fir_process: process(clk_i, rst_i)
+        -- The accumulator must be a variable to be updated within a single clock cycle.
+        variable v_accumulator : signed(ACCUMULATOR_WIDTH-1 downto 0);
+    begin
+        if (rst_i = '1') then
+            -- Reset condition: clear the delay line and the output valid flag.
+            s_delay_line <= (others => (others => '0'));
+            filtered_valid_o <= '0';
+
+        elsif rising_edge(clk_i) then
+            -- Default assignment for the output valid flag, it will be high for one cycle.
+            filtered_valid_o <= '0';
+
+            -- Check if a new, valid sample has arrived from the ADC.
+            if (sample_valid_i = '1') then
+                -- Step 1: Shift the delay line
+                -- The new sample will be inserted at the beginning, and the oldest will be discarded.
+                s_delay_line(1 to NUM_TAPS-1) <= s_delay_line(0 to NUM_TAPS-2);
+                s_delay_line(0) <= signed(sample_i);
+
+                -- Step 2: Perform the Multiply-Accumulate (MAC) operation
+                -- Reset the accumulator variable for this new calculation.
+                v_accumulator := (others => '0');
+                for i in 0 to NUM_TAPS-1 loop
+                    -- Multiply the sample in the delay line by its corresponding coefficient
+                    -- and add it to the accumulator.
+                    v_accumulator := v_accumulator + (s_delay_line(i) * C_FIR_COEFFS(i));
+                end loop;
+
+                -- Step 3: Truncate and assign the final output.
+                -- Select the best 12 bits from the 35-bit accumulator.
+                -- This selection effectively divides by 2^15 to scale the result back down.
+                filtered_o <= std_logic_vector(v_accumulator(26 downto 15));
+
+                -- Step 4: Pulse the valid flag to indicate the output is ready.
+                filtered_valid_o <= '1';
+            end if;
+        end if;
+    end process fir_process;
+
+end architecture rtl;

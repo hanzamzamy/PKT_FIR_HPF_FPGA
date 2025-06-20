@@ -1,0 +1,16 @@
+<sld_project_info>
+  <project>
+    <hash md5_digest_80b="9cd2c1f193771dce5cdb"/>
+  </project>
+  <file_info>
+    <file device="10M50DAF484C7G" path="HighPass_FIR.sof" usercode="0xFFFFFFFF"/>
+  </file_info>
+  <sld_infos>
+    <sld_info hpath="de10_lite_adc:adc_inst" name="adc_inst">
+      <assignment_values>
+        <assignment_value text="QSYS_NAME de10_lite_adc HAS_SOPCINFO 1 GENERATION_ID 1750312725"/>
+      </assignment_values>
+      <parameters/>
+    </sld_info>
+  </sld_infos>
+</sld_project_info>

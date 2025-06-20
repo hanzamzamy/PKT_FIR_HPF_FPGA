@@ -1,0 +1,18 @@
+Fitter Status : Successful - Fri Jun 20 22:40:32 2025
+Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
+Revision Name : HighPass_FIR
+Top-level Entity Name : HighPass_FIR
+Family : MAX 10
+Device : 10M50DAF484C7G
+Timing Models : Final
+Total logic elements : 7,273 / 49,760 ( 15 % )
+    Total combinational functions : 6,963 / 49,760 ( 14 % )
+    Dedicated logic registers : 1,407 / 49,760 ( 3 % )
+Total registers : 1407
+Total pins : 22 / 360 ( 6 % )
+Total virtual pins : 0
+Total memory bits : 768 / 1,677,312 ( < 1 % )
+Embedded Multiplier 9-bit elements : 0 / 288 ( 0 % )
+Total PLLs : 1 / 4 ( 25 % )
+UFM blocks : 0 / 1 ( 0 % )
+ADC blocks : 1 / 2 ( 50 % )

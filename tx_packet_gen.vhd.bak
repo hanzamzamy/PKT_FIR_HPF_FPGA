@@ -1,0 +1,104 @@
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
+entity tx_packet_gen is
+    port (
+        clk_i              : in  std_logic;
+        rst_i              : in  std_logic;
+
+        -- Interface to the FIR Filter
+        unfiltered_data_i  : in  std_logic_vector(11 downto 0);
+        filtered_data_i    : in  std_logic_vector(11 downto 0);
+        data_valid_i       : in  std_logic; -- Pulse from the filter indicating new data
+
+        -- Interface to the UART Transmitter
+        uart_data_o        : out std_logic_vector(7 downto 0);
+        uart_start_o       : out std_logic;
+        uart_busy_i        : in  std_logic
+    );
+end entity tx_packet_gen;
+
+architecture rtl of tx_packet_gen is
+
+    -- Define the states for our packet sending state machine.
+    type T_STATE is (
+        ST_IDLE,
+        ST_SEND_SYNC,
+        ST_SEND_BYTE_0,
+        ST_SEND_BYTE_1,
+        ST_SEND_BYTE_2,
+        ST_WAIT_UART_BUSY
+    );
+    signal s_state : T_STATE := ST_IDLE;
+
+    -- Define the 4-byte packet structure
+    constant C_SYNC_BYTE : std_logic_vector(7 downto 0) := x"AA"; -- Unique sync byte
+
+    signal s_byte_0 : std_logic_vector(7 downto 0); -- Unfiltered lower 8 bits
+    signal s_byte_1 : std_logic_vector(7 downto 0); -- Filtered lower 8 bits
+    signal s_byte_2 : std_logic_vector(7 downto 0); -- Upper 4 bits of both
+
+begin
+
+    -- Packet construction logic (this is purely combinational)
+    s_byte_0 <= unfiltered_data_i(7 downto 0);
+    s_byte_1 <= filtered_data_i(7 downto 0);
+    s_byte_2 <= unfiltered_data_i(11 downto 8) & filtered_data_i(11 downto 8);
+
+    -- Default assignment for the UART start pulse
+    uart_start_o <= '0';
+
+    packet_process: process(clk_i, rst_i)
+    begin
+        if (rst_i = '1') then
+            s_state     <= ST_IDLE;
+            uart_data_o <= (others => '0');
+
+        elsif rising_edge(clk_i) then
+
+            case s_state is
+                when ST_IDLE =>
+                    if (data_valid_i = '1') then
+                        s_state <= ST_SEND_SYNC;
+                    end if;
+
+                when ST_SEND_SYNC =>
+                    if (uart_busy_i = '0') then
+                        uart_data_o  <= C_SYNC_BYTE;
+                        uart_start_o <= '1';
+                        s_state      <= ST_SEND_BYTE_0;
+                    end if;
+
+                when ST_SEND_BYTE_0 =>
+                    if (uart_busy_i = '0') then
+                        uart_data_o  <= s_byte_0;
+                        uart_start_o <= '1';
+                        s_state      <= ST_SEND_BYTE_1;
+                    end if;
+
+                when ST_SEND_BYTE_1 =>
+                    if (uart_busy_i = '0') then
+                        uart_data_o  <= s_byte_1;
+                        uart_start_o <= '1';
+                        s_state      <= ST_SEND_BYTE_2;
+                    end if;
+
+                when ST_SEND_BYTE_2 =>
+                    if (uart_busy_i = '0') then
+                        uart_data_o  <= s_byte_2;
+                        uart_start_o <= '1';
+                        s_state      <= ST_WAIT_UART_BUSY;
+                    end if;
+
+                when ST_WAIT_UART_BUSY =>
+                    -- Wait for the last byte to finish sending before returning to idle
+                    if (uart_busy_i = '0') then
+                        s_state <= ST_IDLE;
+                    end if;
+
+            end case;
+        end if;
+    end process packet_process;
+
+end architecture rtl;

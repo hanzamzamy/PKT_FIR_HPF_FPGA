@@ -1,0 +1,116 @@
+Info: Starting: Create simulation model
+Info: qsys-generate /mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc.qsys --simulation=VERILOG --allow-mixed-language-simulation --output-directory=/mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/simulation --family="MAX 10" --part=10M50DAF484C7G
+Progress: Loading HighPass_FIR/de10_lite_adc.qsys
+Progress: Reading input file
+Progress: Adding adc_mega_0 [altera_up_avalon_adc_mega 18.0]
+Progress: Parameterizing module adc_mega_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: de10_lite_adc: Generating de10_lite_adc "de10_lite_adc" for SIM_VERILOG
+Info: adc_mega_0: Starting Generation of ADC Controller for DE-series Board
+Warning: adc_mega_0: add_file from generate callback added file altera_modular_adc_control.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_control.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file altera_modular_adc_control_avrg_fifo.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_control_avrg_fifo.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file altera_modular_adc_control_fsm.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_control_fsm.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file altera_modular_adc_sample_store.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sample_store.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file altera_modular_adc_sample_store_ram.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sample_store_ram.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file altera_modular_adc_sequencer.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sequencer.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file altera_modular_adc_sequencer_csr.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sequencer_csr.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file altera_modular_adc_sequencer_ctrl.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sequencer_ctrl.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file chsel_code_converter_sw_to_hw.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/chsel_code_converter_sw_to_hw.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file DE10_Lite_ADC_Core_modular_adc_0.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/DE10_Lite_ADC_Core_modular_adc_0.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file fiftyfivenm_adcblock_primitive_wrapper.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/fiftyfivenm_adcblock_primitive_wrapper.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file fiftyfivenm_adcblock_top_wrapper.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/fiftyfivenm_adcblock_top_wrapper.v from generate callback is unsafe; add static files from main program
+Info: adc_mega_0: /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/altera_up_avalon_adv_adc.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_control.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_control_avrg_fifo.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_control_fsm.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sample_store.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sample_store_ram.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sequencer.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sequencer_csr.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sequencer_ctrl.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/chsel_code_converter_sw_to_hw.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/DE10_Lite_ADC_Core_modular_adc_0.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/fiftyfivenm_adcblock_primitive_wrapper.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/fiftyfivenm_adcblock_top_wrapper.v /tmp/alt0258_6529190823120245801.dir/0002_sopcgen/de10_lite_adc_adc_mega_0.v
+Warning: adc_mega_0: Generation callback did not provide a top level file.  Found de10_lite_adc_adc_mega_0.v in output directory - callback must `add_file $output_dir/de10_lite_adc_adc_mega_0.v {SIMULATION SYNTHESIS}`
+Info: adc_mega_0: "de10_lite_adc" instantiated altera_up_avalon_adc_mega "adc_mega_0"
+Info: de10_lite_adc: Done "de10_lite_adc" with 2 modules, 15 files
+Info: qsys-generate succeeded.
+Info: Finished: Create simulation model
+Info: Starting: Create Modelsim Project.
+Info: sim-script-gen --spd=/mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/de10_lite_adc.spd --output-directory=/mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/simulation/ --use-relative-paths=true
+Info: Doing: ip-make-simscript --spd=/mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/de10_lite_adc.spd --output-directory=/mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/simulation/ --use-relative-paths=true
+Info: Generating the following file(s) for MODELSIM simulator in /mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/simulation/ directory:
+Info: 	mentor/msim_setup.tcl
+Info: Generating the following file(s) for VCS simulator in /mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/simulation/ directory:
+Info: 	synopsys/vcs/vcs_setup.sh
+Info: Generating the following file(s) for VCSMX simulator in /mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/simulation/ directory:
+Info: 	synopsys/vcsmx/synopsys_sim.setup
+Info: 	synopsys/vcsmx/vcsmx_setup.sh
+Info: Generating the following file(s) for NCSIM simulator in /mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/simulation/ directory:
+Info: 	cadence/cds.lib
+Info: 	cadence/hdl.var
+Info: 	cadence/ncsim_setup.sh
+Info: 	1 .cds.lib files in cadence/cds_libs/ directory
+Info: Generating the following file(s) for RIVIERA simulator in /mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/simulation/ directory:
+Info: 	aldec/rivierapro_setup.tcl
+Info: For information on how to simulate your IP, see the explanatory comments in the simulator-specific subdirectories under /mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/simulation/.
+Info: Regenerate these scripts whenever you make any change to any Quartus-generated IP in your project.
+Info: Finished: Create Modelsim Project.
+Info: Starting: Create block symbol file (.bsf)
+Info: qsys-generate /mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc.qsys --block-symbol-file --output-directory=/mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc --family="MAX 10" --part=10M50DAF484C7G
+Progress: Loading HighPass_FIR/de10_lite_adc.qsys
+Progress: Reading input file
+Progress: Adding adc_mega_0 [altera_up_avalon_adc_mega 18.0]
+Progress: Parameterizing module adc_mega_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: qsys-generate succeeded.
+Info: Finished: Create block symbol file (.bsf)
+Info: 
+Info: Starting: Create HDL design files for synthesis
+Info: qsys-generate /mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc.qsys --synthesis=VERILOG --output-directory=/mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/synthesis --family="MAX 10" --part=10M50DAF484C7G
+Progress: Loading HighPass_FIR/de10_lite_adc.qsys
+Progress: Reading input file
+Progress: Adding adc_mega_0 [altera_up_avalon_adc_mega 18.0]
+Progress: Parameterizing module adc_mega_0
+Progress: Building connections
+Progress: Parameterizing connections
+Progress: Validating
+Progress: Done reading input file
+Info: de10_lite_adc: Generating de10_lite_adc "de10_lite_adc" for QUARTUS_SYNTH
+Info: adc_mega_0: Starting Generation of ADC Controller for DE-series Board
+Warning: adc_mega_0: add_file from generate callback added file altera_modular_adc_control.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_control.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file altera_modular_adc_control_avrg_fifo.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_control_avrg_fifo.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file altera_modular_adc_control_fsm.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_control_fsm.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file altera_modular_adc_sample_store.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sample_store.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file altera_modular_adc_sample_store_ram.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sample_store_ram.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file altera_modular_adc_sequencer.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sequencer.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file altera_modular_adc_sequencer_csr.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sequencer_csr.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file altera_modular_adc_sequencer_ctrl.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sequencer_ctrl.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file chsel_code_converter_sw_to_hw.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/chsel_code_converter_sw_to_hw.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file DE10_Lite_ADC_Core_modular_adc_0.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/DE10_Lite_ADC_Core_modular_adc_0.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file fiftyfivenm_adcblock_primitive_wrapper.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/fiftyfivenm_adcblock_primitive_wrapper.v from generate callback is unsafe; add static files from main program
+Warning: adc_mega_0: add_file from generate callback added file fiftyfivenm_adcblock_top_wrapper.v with wrong prefix; use [get_generation_property output_name] to get correct prefix
+Warning: adc_mega_0: add_file on static file /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/fiftyfivenm_adcblock_top_wrapper.v from generate callback is unsafe; add static files from main program
+Info: adc_mega_0: /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/altera_up_avalon_adv_adc.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_control.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_control_avrg_fifo.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_control_fsm.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sample_store.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sample_store_ram.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sequencer.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sequencer_csr.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/altera_modular_adc_sequencer_ctrl.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/chsel_code_converter_sw_to_hw.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/DE10_Lite_ADC_Core_modular_adc_0.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/fiftyfivenm_adcblock_primitive_wrapper.v /mount/hanz/Data/PKT/quartus/ip/altera/university_program/input_output/altera_up_avalon_adc/hdl/de10/fiftyfivenm_adcblock_top_wrapper.v /tmp/alt0258_6529190823120245801.dir/0006_sopcgen/de10_lite_adc_adc_mega_0.v
+Info: adc_mega_0: "de10_lite_adc" instantiated altera_up_avalon_adc_mega "adc_mega_0"
+Info: de10_lite_adc: Done "de10_lite_adc" with 2 modules, 15 files
+Info: qsys-generate succeeded.
+Info: Finished: Create HDL design files for synthesis
