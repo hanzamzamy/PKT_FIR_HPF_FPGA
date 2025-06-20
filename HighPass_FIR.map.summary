@@ -1,16 +1,16 @@
-Analysis & Elaboration Status : Successful - Fri Jun 20 23:41:20 2025
+Analysis & Synthesis Status : Successful - Fri Jun 20 23:43:20 2025
 Quartus Prime Version : 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 Revision Name : HighPass_FIR
 Top-level Entity Name : HighPass_FIR
 Family : MAX 10
-Total logic elements : N/A until Partition Merge
-    Total combinational functions : N/A until Partition Merge
-    Dedicated logic registers : N/A until Partition Merge
-Total registers : N/A until Partition Merge
-Total pins : N/A until Partition Merge
-Total virtual pins : N/A until Partition Merge
-Total memory bits : N/A until Partition Merge
-Embedded Multiplier 9-bit elements : N/A until Partition Merge
-Total PLLs : N/A until Partition Merge
-UFM blocks : N/A until Partition Merge
-ADC blocks : N/A until Partition Merge
+Total logic elements : 8,226
+    Total combinational functions : 6,963
+    Dedicated logic registers : 1,407
+Total registers : 1407
+Total pins : 22
+Total virtual pins : 0
+Total memory bits : 768
+Embedded Multiplier 9-bit elements : 0
+Total PLLs : 1
+UFM blocks : 0
+ADC blocks : 1
