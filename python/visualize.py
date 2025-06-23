@@ -13,7 +13,7 @@ BAUD_RATE = 1_000_000
 SAMPLE_RATE = 20_000          # 20 kHz
 
 # Plotting settings
-PLOT_DURATION_S = 0.05
+PLOT_DURATION_S = 0.005
 NUM_PLOT_SAMPLES = int(SAMPLE_RATE * PLOT_DURATION_S)
 
 # FFT settings
@@ -106,7 +106,7 @@ def update_plot(frame):
         current_time = time.time()
         elapsed_time = current_time - last_update_time
 
-        if elapsed_time > 0.5: # Update rate every 0.5 seconds
+        if elapsed_time > 1: # Update rate every 0.5 seconds
             message_rate = packet_counter / elapsed_time
             # Each packet is 4 bytes (1 sync + 3 data)
             data_rate_kbps = (message_rate * 4) / 1024
