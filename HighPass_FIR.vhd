@@ -5,14 +5,11 @@ use ieee.numeric_std.all;
 entity HighPass_FIR is
     port (
         ------------ CLOCK ------------
-        ADC_CLK_10      : in  std_logic;
         MAX10_CLK1_50   : in  std_logic;
-        MAX10_CLK2_50   : in  std_logic;
         ------------ KEY --------------
         KEY             : in  std_logic_vector(1 downto 0);
         ------------ ARDUINO ----------
-        ARDUINO_IO      : inout std_logic_vector(15 downto 0);
-        ARDUINO_RESET_N : inout std_logic
+        ARDUINO_IO      : inout std_logic_vector(15 downto 0)
     );
 end entity HighPass_FIR;
 
@@ -20,7 +17,7 @@ end entity HighPass_FIR;
 architecture rtl of HighPass_FIR is
 
     --=======================================================
-    --  1. Design Parameters and Constants
+    --  Design Parameters and Constants
     --=======================================================
     constant SAMPLING_RATE_HZ : integer := 20_000;    -- 20 kSPS
     constant BAUD_RATE_BPS    : integer := 1_000_000;  -- 1 Mbps
@@ -28,7 +25,7 @@ architecture rtl of HighPass_FIR is
     constant CLK_DIVIDER      : integer := CLK_FREQ_HZ / SAMPLING_RATE_HZ;
 
     --=======================================================
-    --  2. Component Declarations
+    --  Component Declarations
     --=======================================================
     component de10_lite_adc is
         port (
@@ -79,7 +76,7 @@ architecture rtl of HighPass_FIR is
 
 
     --=======================================================
-    --  3. Internal Signals
+    --  Internal Signals
     --=======================================================
     signal clk                : std_logic;
     signal rst                : std_logic;
@@ -95,14 +92,14 @@ architecture rtl of HighPass_FIR is
 begin
 
     --=======================================================
-    --  4. Concurrent Statements and Assignments
+    --  Concurrent Statements and Assignments
     --=======================================================
     clk <= MAX10_CLK1_50;
     rst <= not KEY(0); -- KEYs are active-low, invert as active-high reset
     ARDUINO_IO(1) <= uart_tx_pin; -- Assign UART TX pin to Arduino D1
 
     --=======================================================
-    --  5. Sampling Clock Generator
+    --  Sampling Clock Generator
     --=======================================================
     sampling_clk_process: process(clk, rst)
         variable v_counter : integer range 0 to CLK_DIVIDER - 1 := 0;
@@ -122,7 +119,7 @@ begin
     end process sampling_clk_process;
 
     --=======================================================
-    --  6. Module Instantiations
+    --  Module Instantiations
     --=======================================================
     adc_inst : component de10_lite_adc
     port map (

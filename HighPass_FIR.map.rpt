@@ -1,5 +1,5 @@
 Analysis & Synthesis report for HighPass_FIR
-Fri Jun 20 23:43:20 2025
+Thu Jun 26 14:09:25 2025
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -164,7 +164,7 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Jun 20 23:43:20 2025       ;
+; Analysis & Synthesis Status        ; Successful - Thu Jun 26 14:09:25 2025       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; HighPass_FIR                                ;
 ; Top-level Entity Name              ; HighPass_FIR                                ;
@@ -173,7 +173,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Total combinational functions  ; 6,963                                       ;
 ;     Dedicated logic registers      ; 1,407                                       ;
 ; Total registers                    ; 1407                                        ;
-; Total pins                         ; 22                                          ;
+; Total pins                         ; 19                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 768                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -289,7 +289,7 @@ https://fpgasoftware.intel.com/eula.
 ;     Processor 5            ;   0.2%      ;
 ;     Processor 6            ;   0.2%      ;
 ;     Processor 7            ;   0.2%      ;
-;     Processor 8            ;   0.1%      ;
+;     Processor 8            ;   0.2%      ;
 ;     Processors 9-14        ;   0.1%      ;
 +----------------------------+-------------+
 
@@ -410,7 +410,7 @@ https://fpgasoftware.intel.com/eula.
 ;     -- Dedicated logic registers            ; 1407                ;
 ;     -- I/O registers                        ; 0                   ;
 ;                                             ;                     ;
-; I/O pins                                    ; 22                  ;
+; I/O pins                                    ; 19                  ;
 ; Total memory bits                           ; 768                 ;
 ;                                             ;                     ;
 ; Embedded Multiplier 9-bit elements          ; 0                   ;
@@ -420,7 +420,7 @@ https://fpgasoftware.intel.com/eula.
 ;                                             ;                     ;
 ; Maximum fan-out node                        ; MAX10_CLK1_50~input ;
 ; Maximum fan-out                             ; 1420                ;
-; Total fan-out                               ; 27192               ;
+; Total fan-out                               ; 27188               ;
 ; Average fan-out                             ; 3.22                ;
 +---------------------------------------------+---------------------+
 
@@ -430,7 +430,7 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+---------------+
 ; Compilation Hierarchy Node                                                      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                                                                                                                                                                                                                                                          ; Entity Name                            ; Library Name  ;
 +---------------------------------------------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+----------------------------------------+---------------+
-; |HighPass_FIR                                                                   ; 6963 (22)           ; 1407 (13)                 ; 768         ; 0          ; 0            ; 0       ; 0         ; 22   ; 0            ; 0          ; |HighPass_FIR                                                                                                                                                                                                                                                                                                                ; HighPass_FIR                           ; work          ;
+; |HighPass_FIR                                                                   ; 6963 (22)           ; 1407 (13)                 ; 768         ; 0          ; 0            ; 0       ; 0         ; 19   ; 0            ; 0          ; |HighPass_FIR                                                                                                                                                                                                                                                                                                                ; HighPass_FIR                           ; work          ;
 ;    |de10_lite_adc:adc_inst|                                                     ; 123 (0)             ; 125 (0)                   ; 768         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HighPass_FIR|de10_lite_adc:adc_inst                                                                                                                                                                                                                                                                                         ; de10_lite_adc                          ; de10_lite_adc ;
 ;       |de10_lite_adc_adc_mega_0:adc_mega_0|                                     ; 123 (14)            ; 125 (13)                  ; 768         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HighPass_FIR|de10_lite_adc:adc_inst|de10_lite_adc_adc_mega_0:adc_mega_0                                                                                                                                                                                                                                                     ; de10_lite_adc_adc_mega_0               ; de10_lite_adc ;
 ;          |altera_up_avalon_adv_adc:ADC_CTRL|                                    ; 109 (21)            ; 112 (23)                  ; 768         ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |HighPass_FIR|de10_lite_adc:adc_inst|de10_lite_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL                                                                                                                                                                                                                   ; altera_up_avalon_adv_adc               ; de10_lite_adc ;
@@ -5866,7 +5866,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 22                          ;
+; boundary_port         ; 19                          ;
 ; cycloneiii_ff         ; 1407                        ;
 ;     CLR               ; 95                          ;
 ;     CLR SCLR          ; 6                           ;
@@ -5876,7 +5876,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     ENA SLD           ; 4                           ;
 ;     SCLR              ; 4                           ;
 ;     plain             ; 16                          ;
-; cycloneiii_io_obuf    ; 17                          ;
+; cycloneiii_io_obuf    ; 16                          ;
 ; cycloneiii_lcell_comb ; 6963                        ;
 ;     arith             ; 4417                        ;
 ;         1 data inputs ; 4                           ;
@@ -5902,7 +5902,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:16     ;
+; Top            ; 00:00:05     ;
 +----------------+--------------+
 
 
@@ -5912,7 +5912,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Fri Jun 20 23:42:51 2025
+    Info: Processing started: Thu Jun 26 14:09:15 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off HighPass_FIR -c HighPass_FIR
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 14 of the 14 processors detected
@@ -5947,7 +5947,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file de10_li
 Info (12021): Found 1 design units, including 1 entities, in source file de10_lite_adc/synthesis/submodules/de10_lite_adc_adc_mega_0.v
     Info (12023): Found entity 1: de10_lite_adc_adc_mega_0 File: /mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/synthesis/submodules/de10_lite_adc_adc_mega_0.v Line: 22
 Info (12021): Found 2 design units, including 1 entities, in source file HighPass_FIR.vhd
-    Info (12022): Found design unit 1: HighPass_FIR-rtl File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 20
+    Info (12022): Found design unit 1: HighPass_FIR-rtl File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 17
     Info (12023): Found entity 1: HighPass_FIR File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file tx_packet_gen.vhd
     Info (12022): Found design unit 1: tx_packet_gen-rtl File: /mount/hanz/Data/PKT/project/HighPass_FIR/tx_packet_gen.vhd Line: 18
@@ -5960,7 +5960,7 @@ Info (12021): Found 2 design units, including 1 entities, in source file uart_tx
     Info (12023): Found entity 1: uart_tx File: /mount/hanz/Data/PKT/project/HighPass_FIR/uart_tx.vhd Line: 5
 Warning (12019): Can't analyze file -- file HighPass_FIR_tb.vhd is missing
 Info (12127): Elaborating entity "HighPass_FIR" for the top level hierarchy
-Info (12128): Elaborating entity "de10_lite_adc" for hierarchy "de10_lite_adc:adc_inst" File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 127
+Info (12128): Elaborating entity "de10_lite_adc" for hierarchy "de10_lite_adc:adc_inst" File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 124
 Info (12128): Elaborating entity "de10_lite_adc_adc_mega_0" for hierarchy "de10_lite_adc:adc_inst|de10_lite_adc_adc_mega_0:adc_mega_0" File: /mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/synthesis/de10_lite_adc.v Line: 41
 Info (12128): Elaborating entity "altera_up_avalon_adv_adc" for hierarchy "de10_lite_adc:adc_inst|de10_lite_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL" File: /mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/synthesis/submodules/de10_lite_adc_adc_mega_0.v Line: 58
 Info (12128): Elaborating entity "altpll" for hierarchy "de10_lite_adc:adc_inst|de10_lite_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|altpll:adc_pll" File: /mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/synthesis/submodules/altera_up_avalon_adv_adc.v Line: 105
@@ -6100,9 +6100,9 @@ Info (12133): Instantiated megafunction "de10_lite_adc:adc_inst|de10_lite_adc_ad
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_v5s1.tdf
     Info (12023): Found entity 1: altsyncram_v5s1 File: /mount/hanz/Data/PKT/project/HighPass_FIR/db/altsyncram_v5s1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_v5s1" for hierarchy "de10_lite_adc:adc_inst|de10_lite_adc_adc_mega_0:adc_mega_0|altera_up_avalon_adv_adc:ADC_CTRL|DE10_Lite_ADC_Core_modular_adc_0:max10_adc_core|altera_modular_adc_sample_store:sample_store_internal|altera_modular_adc_sample_store_ram:u_ss_ram|altsyncram:altsyncram_component|altsyncram_v5s1:auto_generated" File: /mount/hanz/Data/PKT/quartus/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "fir_filter" for hierarchy "fir_filter:fir_inst" File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 134
-Info (12128): Elaborating entity "tx_packet_gen" for hierarchy "tx_packet_gen:packet_inst" File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 145
-Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:uart_inst" File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 158
+Info (12128): Elaborating entity "fir_filter" for hierarchy "fir_filter:fir_inst" File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 131
+Info (12128): Elaborating entity "tx_packet_gen" for hierarchy "tx_packet_gen:packet_inst" File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 142
+Info (12128): Elaborating entity "uart_tx" for hierarchy "uart_tx:uart_inst" File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 155
 Warning (12030): Port "clk" on the entity instantiation of "adc_pll" is connected to a signal of width 1. The formal width of the signal in the module is 5.  The extra bits will be left dangling without any fan-out logic. File: /mount/hanz/Data/PKT/project/HighPass_FIR/de10_lite_adc/synthesis/submodules/altera_up_avalon_adv_adc.v Line: 105
 Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following RAM node(s):
@@ -6734,49 +6734,46 @@ Info (12133): Instantiated megafunction "fir_filter:fir_inst|lpm_mult:Mult29" wi
     Info (12134): Parameter "MAXIMIZE_SPEED" = "6"
 Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13034): The following nodes have both tri-state and non-tri-state drivers
-    Warning (13035): Inserted always-enabled tri-state buffer between "ARDUINO_IO[1]" and its non-tri-state driver. File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
+    Warning (13035): Inserted always-enabled tri-state buffer between "ARDUINO_IO[1]" and its non-tri-state driver. File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
 Warning (13039): The following bidirectional pins have no drivers
-    Warning (13040): bidirectional pin "ARDUINO_IO[0]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
-    Warning (13040): bidirectional pin "ARDUINO_IO[2]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
-    Warning (13040): bidirectional pin "ARDUINO_IO[3]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
-    Warning (13040): bidirectional pin "ARDUINO_IO[4]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
-    Warning (13040): bidirectional pin "ARDUINO_IO[5]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
-    Warning (13040): bidirectional pin "ARDUINO_IO[6]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
-    Warning (13040): bidirectional pin "ARDUINO_IO[7]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
-    Warning (13040): bidirectional pin "ARDUINO_IO[8]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
-    Warning (13040): bidirectional pin "ARDUINO_IO[9]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
-    Warning (13040): bidirectional pin "ARDUINO_IO[10]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
-    Warning (13040): bidirectional pin "ARDUINO_IO[11]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
-    Warning (13040): bidirectional pin "ARDUINO_IO[12]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
-    Warning (13040): bidirectional pin "ARDUINO_IO[13]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
-    Warning (13040): bidirectional pin "ARDUINO_IO[14]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
-    Warning (13040): bidirectional pin "ARDUINO_IO[15]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
-    Warning (13040): bidirectional pin "ARDUINO_RESET_N" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 15
+    Warning (13040): bidirectional pin "ARDUINO_IO[0]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
+    Warning (13040): bidirectional pin "ARDUINO_IO[2]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
+    Warning (13040): bidirectional pin "ARDUINO_IO[3]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
+    Warning (13040): bidirectional pin "ARDUINO_IO[4]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
+    Warning (13040): bidirectional pin "ARDUINO_IO[5]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
+    Warning (13040): bidirectional pin "ARDUINO_IO[6]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
+    Warning (13040): bidirectional pin "ARDUINO_IO[7]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
+    Warning (13040): bidirectional pin "ARDUINO_IO[8]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
+    Warning (13040): bidirectional pin "ARDUINO_IO[9]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
+    Warning (13040): bidirectional pin "ARDUINO_IO[10]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
+    Warning (13040): bidirectional pin "ARDUINO_IO[11]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
+    Warning (13040): bidirectional pin "ARDUINO_IO[12]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
+    Warning (13040): bidirectional pin "ARDUINO_IO[13]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
+    Warning (13040): bidirectional pin "ARDUINO_IO[14]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
+    Warning (13040): bidirectional pin "ARDUINO_IO[15]" has no driver File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
 Info (13000): Registers with preset signals will power-up high File: /mount/hanz/Data/PKT/project/HighPass_FIR/uart_tx.vhd Line: 20
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13009): TRI or OPNDRN buffers permanently enabled
-    Warning (13010): Node "ARDUINO_IO[1]~synth" File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 14
+    Warning (13010): Node "ARDUINO_IO[1]~synth" File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 11 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 3 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "ADC_CLK_10" File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 8
-    Warning (15610): No output dependent on input pin "MAX10_CLK2_50" File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 10
-    Warning (15610): No output dependent on input pin "KEY[1]" File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 12
-Info (21057): Implemented 8272 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 5 input pins
+Warning (21074): Design contains 1 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "KEY[1]" File: /mount/hanz/Data/PKT/project/HighPass_FIR/HighPass_FIR.vhd Line: 10
+Info (21057): Implemented 8269 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 3 input pins
     Info (21059): Implemented 0 output pins
-    Info (21060): Implemented 17 bidirectional pins
+    Info (21060): Implemented 16 bidirectional pins
     Info (21061): Implemented 8236 logic cells
     Info (21064): Implemented 12 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 64 warnings
-    Info: Peak virtual memory: 611 megabytes
-    Info: Processing ended: Fri Jun 20 23:43:20 2025
-    Info: Elapsed time: 00:00:29
-    Info: Total CPU time (on all processors): 00:00:58
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 61 warnings
+    Info: Peak virtual memory: 612 megabytes
+    Info: Processing ended: Thu Jun 26 14:09:25 2025
+    Info: Elapsed time: 00:00:10
+    Info: Total CPU time (on all processors): 00:00:20
 
 
 +------------------------------------------+

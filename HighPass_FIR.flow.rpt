@@ -1,5 +1,5 @@
 Flow report for HighPass_FIR
-Fri Jun 20 23:44:41 2025
+Thu Jun 26 14:09:53 2025
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -41,18 +41,18 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri Jun 20 23:44:41 2025       ;
+; Flow Status                        ; Successful - Thu Jun 26 14:09:53 2025       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; HighPass_FIR                                ;
 ; Top-level Entity Name              ; HighPass_FIR                                ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 7,273 / 49,760 ( 15 % )                     ;
+; Total logic elements               ; 7,285 / 49,760 ( 15 % )                     ;
 ;     Total combinational functions  ; 6,963 / 49,760 ( 14 % )                     ;
 ;     Dedicated logic registers      ; 1,407 / 49,760 ( 3 % )                      ;
 ; Total registers                    ; 1407                                        ;
-; Total pins                         ; 22 / 360 ( 6 % )                            ;
+; Total pins                         ; 19 / 360 ( 5 % )                            ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 768 / 1,677,312 ( < 1 % )                   ;
 ; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 06/20/2025 23:42:51 ;
+; Start date & time ; 06/26/2025 14:09:15 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; HighPass_FIR        ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +--------------------------------------+-----------------------------------------------------------------+---------------+---------------+----------------+
 ; Assignment Name                      ; Value                                                           ; Default Value ; Entity Name   ; Section Id     ;
 +--------------------------------------+-----------------------------------------------------------------+---------------+---------------+----------------+
-; COMPILER_SIGNATURE_ID                ; 242193882348970.175043777157526                                 ; --            ; --            ; --             ;
+; COMPILER_SIGNATURE_ID                ; 242193882348970.175092175503327                                 ; --            ; --            ; --             ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                                              ; --            ; --            ; tb_top         ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; tb_top                                                          ; --            ; --            ; eda_simulation ;
 ; EDA_NETLIST_WRITER_OUTPUT_DIR        ; simulation/                                                     ; --            ; --            ; eda_simulation ;
@@ -111,12 +111,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:28     ; 1.0                     ; 611 MB              ; 00:00:57                           ;
-; Fitter               ; 00:00:59     ; 1.8                     ; 1996 MB             ; 00:03:44                           ;
-; Assembler            ; 00:00:04     ; 1.0                     ; 395 MB              ; 00:00:04                           ;
-; Timing Analyzer      ; 00:00:07     ; 3.9                     ; 726 MB              ; 00:00:24                           ;
-; EDA Netlist Writer   ; 00:00:02     ; 1.0                     ; 656 MB              ; 00:00:02                           ;
-; Total                ; 00:01:40     ; --                      ; --                  ; 00:05:11                           ;
+; Analysis & Synthesis ; 00:00:10     ; 1.0                     ; 612 MB              ; 00:00:20                           ;
+; Fitter               ; 00:00:19     ; 2.0                     ; 1995 MB             ; 00:01:15                           ;
+; Assembler            ; 00:00:01     ; 1.0                     ; 391 MB              ; 00:00:02                           ;
+; Timing Analyzer      ; 00:00:03     ; 4.2                     ; 727 MB              ; 00:00:09                           ;
+; EDA Netlist Writer   ; 00:00:00     ; 1.0                     ; 658 MB              ; 00:00:01                           ;
+; Total                ; 00:00:33     ; --                      ; --                  ; 00:01:47                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

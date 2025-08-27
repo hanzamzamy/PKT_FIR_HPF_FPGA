@@ -1,5 +1,4 @@
 |HighPass_FIR
-ADC_CLK_10 => ~NO_FANOUT~
 MAX10_CLK1_50 => sample_clk_tick.CLK
 MAX10_CLK1_50 => \sampling_clk_process:v_counter[0].CLK
 MAX10_CLK1_50 => \sampling_clk_process:v_counter[1].CLK
@@ -17,7 +16,6 @@ MAX10_CLK1_50 => de10_lite_adc:adc_inst.CLOCK
 MAX10_CLK1_50 => fir_filter:fir_inst.clk_i
 MAX10_CLK1_50 => tx_packet_gen:packet_inst.clk_i
 MAX10_CLK1_50 => uart_tx:uart_inst.clk_i
-MAX10_CLK2_50 => ~NO_FANOUT~
 KEY[0] => sample_clk_tick.ACLR
 KEY[0] => \sampling_clk_process:v_counter[0].ACLR
 KEY[0] => \sampling_clk_process:v_counter[1].ACLR
@@ -52,7 +50,6 @@ ARDUINO_IO[12] <> <UNC>
 ARDUINO_IO[13] <> <UNC>
 ARDUINO_IO[14] <> <UNC>
 ARDUINO_IO[15] <> <UNC>
-ARDUINO_RESET_N <> <UNC>
 
 
 |HighPass_FIR|de10_lite_adc:adc_inst

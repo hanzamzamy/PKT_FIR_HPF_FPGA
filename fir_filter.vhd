@@ -32,7 +32,7 @@ end entity fir_filter;
 architecture rtl of fir_filter is
 
     -- VHDL Coefficient Array
-    -- Filter: High-Pass, Fs=40000Hz, Fcut=1800Hz, Taps=101
+    -- Filter: High-Pass, Fs=20000Hz, Fcut=1800Hz, Taps=101
     type T_COEFF_ARRAY is array (0 to NUM_TAPS-1) of signed(COEFFICIENT_WIDTH-1 downto 0);
     constant C_FIR_COEFFS : T_COEFF_ARRAY := (
         to_signed(     0, 16), to_signed(    -9, 16), to_signed(   -16, 16), to_signed(   -19, 16), to_signed(   -16, 16), to_signed(    -7, 16), to_signed(     7, 16), to_signed(    22, 16),

@@ -63,14 +63,14 @@ ax.set_ylim(-2048, 2047)
 unfiltered_buffer = np.zeros(NUM_PLOT_SAMPLES)
 filtered_buffer = np.zeros(NUM_PLOT_SAMPLES)
 
-packet_counter = 0
-last_update_time = time.time()
-
-data_rate_str = "Data Rate: 0.00 KB/s"
-msg_rate_str = "Msg Rate: 0 Hz"
-
-metrics_text = ax.text(0.02, 0.95, "", transform=ax.transAxes, verticalalignment='top',
-                       bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
+# packet_counter = 0
+# last_update_time = time.time()
+#
+# data_rate_str = "Data Rate: 0.00 KB/s"
+# msg_rate_str = "Msg Rate: 0 Hz"
+#
+# metrics_text = ax.text(0.02, 0.95, "", transform=ax.transAxes, verticalalignment='top',
+#                        bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.5))
 
 def process_packet(packet):
     """Helper function to parse one 3-byte packet."""
@@ -84,7 +84,8 @@ def process_packet(packet):
 
 def update_plot(frame):
     """Updates the live time-domain plot and metrics."""
-    global unfiltered_buffer, filtered_buffer, packet_counter, last_update_time, data_rate_str, msg_rate_str
+    global unfiltered_buffer, filtered_buffer
+    # global unfiltered_buffer, filtered_buffer, packet_counter, last_update_time, data_rate_str, msg_rate_str
 
     packets_in_frame = 0
     while not data_queue.empty():
@@ -101,32 +102,33 @@ def update_plot(frame):
         except queue.Empty:
             break
 
-    if packets_in_frame > 0:
-        packet_counter += packets_in_frame
-        current_time = time.time()
-        elapsed_time = current_time - last_update_time
-
-        if elapsed_time > 1: # Update rate every 0.5 seconds
-            message_rate = packet_counter / elapsed_time
-            # Each packet is 4 bytes (1 sync + 3 data)
-            data_rate_kbps = (message_rate * 4) / 1024
-
-            # Update the strings
-            data_rate_str = f"Data Rate: {data_rate_kbps:.2f} KB/s"
-            msg_rate_str = f"Msg Rate: {int(message_rate)} Hz"
-
-            # Reset counters
-            packet_counter = 0
-            last_update_time = current_time
+    # if packets_in_frame > 0:
+    #     packet_counter += packets_in_frame
+    #     current_time = time.time()
+    #     elapsed_time = current_time - last_update_time
+    #
+    #     if elapsed_time > 1: # Update rate every 0.5 seconds
+    #         message_rate = packet_counter / elapsed_time
+    #         # Each packet is 4 bytes (1 sync + 3 data)
+    #         data_rate_kbps = (message_rate * 4) / 1024
+    #
+    #         # Update the strings
+    #         data_rate_str = f"Data Rate: {data_rate_kbps:.2f} KB/s"
+    #         msg_rate_str = f"Msg Rate: {int(message_rate)} Hz"
+    #
+    #         # Reset counters
+    #         packet_counter = 0
+    #         last_update_time = current_time
 
     # Update the metrics text on the plot
-    queue_size = data_queue.qsize()
-    metrics_text.set_text(f"Queue Size: {queue_size}\n{msg_rate_str}\n{data_rate_str}")
+    # queue_size = data_queue.qsize()
+    # metrics_text.set_text(f"Queue Size: {queue_size}\n{msg_rate_str}\n{data_rate_str}")
 
     line_unfiltered.set_ydata(unfiltered_buffer)
     line_filtered.set_ydata(filtered_buffer)
 
-    return line_unfiltered, line_filtered, metrics_text
+    # return line_unfiltered, line_filtered, metrics_text
+    return line_unfiltered, line_filtered
 
 
 def calculate_and_plot_freq_response(event):
