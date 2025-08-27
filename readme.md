@@ -45,7 +45,7 @@ The top-level module connects the ADC, FIR filter, packet generator, and UART tr
 
 ## Documentation
 
-Detailed documentation is available in [latex/report.tex](latex/report.tex).
+Report is available in [latex/report.pdf](latex/report.pdf).
 
 ## License
 
